@@ -8,8 +8,5 @@ module "vpc" {
   private_subnets = var.vpc_private_subnets
   public_subnets  = var.vpc_public_subnets
 
-  tags = {
-    Terraform = "true"
-    DevopsMaster = "true"
-  }
+  tags = var.tags
 }

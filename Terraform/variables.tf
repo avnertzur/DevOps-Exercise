@@ -28,3 +28,12 @@ variable private_ip {
   description = "Personal IP to connect with"
   type        = list(string)
 }
+
+variable tags {
+  description = "Tags to add to all resources"
+  type        = map
+  default     = {
+    Terraform = "true"
+    DevopsMaster = "true"
+  }
+}
