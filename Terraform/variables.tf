@@ -37,3 +37,9 @@ variable tags {
     DevopsMaster = "true"
   }
 }
+
+variable "keypair_name" {
+  description = "keypair_name"
+  type        = string
+  default     = "devops_kp"
+}
