@@ -8,21 +8,22 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-east-1"
+  region = var.aws_region
 }
 
 module "vpc" {
   source = "terraform-aws-modules/vpc/aws"
 
-  name = "my-vpc"
-  cidr = "10.42.0.0/16"
+  name = var.vpc_name
+  cidr = var.vpc_cidr
 
-  azs             = ["us-east-1a"]
-  private_subnets = ["10.42.1.0/24"]
-  public_subnets  = ["10.42.2.0/24"]
+  azs             = local.vpc_azs
+  private_subnets = var.vpc_private_subnets
+  public_subnets  = var.vpc_public_subnets
 
   tags = {
     Terraform = "true"
     DevopsMaster = "true"
   }
 }
+
