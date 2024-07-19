@@ -24,3 +24,14 @@ resource "aws_security_group_rule" "HTTPS" {
 
   security_group_id = aws_security_group.external_connection_sg.id
 }
+
+resource "aws_security_group_rule" "PING" {
+  type        = "ingress"
+  from_port   = 8
+  to_port     = 0
+  protocol    = "icmp"
+  cidr_blocks = var.private_ip
+  description = "ping"
+
+  security_group_id = aws_security_group.external_connection_sg.id
+}
