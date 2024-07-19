@@ -26,5 +26,5 @@ variable "vpc_public_subnets" {
 
 variable private_ip {
   description = "Personal IP to connect with"
-  type        = string
+  type        = list(string)
 }
