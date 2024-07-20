@@ -3,19 +3,20 @@
 This Terraform project sets up an Amazon Web Services (AWS) environment with the following components:
 
 1. **Virtual Private Cloud (VPC)**: A custom VPC with private and public subnets.
-2. **Security Groups (SGs)**:
+2. **Internet Gateway**: Allows connection to the internet.
+3. **Security Groups (SGs)**:
    - `external_connection_sg`: Allows inbound traffic on port 443 (HTTPS), port 22 (SSH) and ICMP (ping) from a private IP.
    - `internal_connection_sg`: Allows inbound traffic on port 22 (SSH) from the `internal_connection_sg`.
-3. **Key Pair**:
+4. **Key Pair**:
    - Generate Key Pair to enable SSH connection with instance
-4. **EC2 Instance**:
+5. **EC2 Instance**:
    - Launches a t3.micro EC2 instance in the public subnet.
    - Associates the `external_connection_sg` with the instance.
    - Associates the generated Key Pair with the instance.
 
 ## Prerequisites
 
-1. Install Terraform: [Terraform Installation Guide](https://learn.hashicorp.com/tutorials/terraform/install-cli)
+1. Install Terraform
 2. Configure AWS credentials: Ensure your AWS access keys are set up.
 
 ## Variables
