@@ -42,12 +42,22 @@ resource "aws_security_group" "internal_connection_sg" {
   vpc_id      = module.vpc.vpc_id
 }
 
-resource "aws_security_group_rule" "Internal_SSH" {
-  type                     = "ingress"
-  from_port                = 22
-  to_port                  = 22
-  protocol                 = "tcp"
-  source_security_group_id = aws_security_group.external_connection_sg.id
-  description              = "SSH"
-  security_group_id        = aws_security_group.internal_connection_sg.id
+resource "aws_security_group_rule" "Internal_ingress_SSH" {
+  type              = "ingress"
+  from_port         = 22
+  to_port           = 22
+  protocol          = "tcp"
+  self              = true
+  description       = "SSH"
+  security_group_id = aws_security_group.internal_connection_sg.id
+}
+
+resource "aws_security_group_rule" "Internal_egress_SSH" {
+  type              = "egress"
+  from_port         = 22
+  to_port           = 22
+  protocol          = "tcp"
+  self              = true
+  description       = "SSH"
+  security_group_id = aws_security_group.internal_connection_sg.id
 }
