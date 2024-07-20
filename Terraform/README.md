@@ -5,7 +5,7 @@ This Terraform project sets up an Amazon Web Services (AWS) environment with the
 1. **Virtual Private Cloud (VPC)**: A custom VPC with private and public subnets.
 2. **Security Groups (SGs)**:
    - `external_connection_sg`: Allows inbound traffic on port 443 (HTTPS), port 22 (SSH) and ICMP (ping) from a private IP.
-   - `internal_connection_sg`: Allows inbound traffic on port 22 (SSH) from the `external_connection_sg`.
+   - `internal_connection_sg`: Allows inbound traffic on port 22 (SSH) from the `internal_connection_sg`.
 3. **Key Pair**:
    - Generate Key Pair to enable SSH connection with instance
 4. **EC2 Instance**:
@@ -45,7 +45,9 @@ This Terraform project sets up an Amazon Web Services (AWS) environment with the
 - Name: `internal-connection-sg`
 - Description: Allows SSH traffic internally.
 - Ingress rule:
-  - SSH (port 22) from the `external-connection-sg`.
+  - SSH (port 22) from the `internal-connection-sg`.
+- Egress rule:
+  - SSH (port 22) from the `internal-connection-sg`.
 
 ## Usage
 
