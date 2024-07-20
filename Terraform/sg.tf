@@ -36,6 +36,17 @@ resource "aws_security_group_rule" "ping" {
   security_group_id = aws_security_group.external_connection_sg.id
 }
 
+resource "aws_security_group_rule" "internet" {
+  type        = "egress"
+  from_port   = 0
+  to_port     = 0
+  protocol    = "-1"
+  cidr_blocks = ["0.0.0.0/0"]
+  description = "access out"
+
+  security_group_id = aws_security_group.external_connection_sg.id
+}
+
 resource "aws_security_group" "internal_connection_sg" {
   name        = "internal-connection-sg"
   description = "Allow SSH traffic internally"
