@@ -8,7 +8,8 @@ This Terraform project sets up an Amazon Web Services (AWS) environment with the
    - `external_connection_sg`: Allows inbound traffic on port 443 (HTTPS), port 22 (SSH) and ICMP (ping) from a private IP.
    - `internal_connection_sg`: Allows inbound traffic on port 22 (SSH) from the `internal_connection_sg`.
 4. **Key Pair**:
-   - Generate Key Pair to enable SSH connection with instance
+   - Generate a Key Pair to enable SSH connection with instance
+   - Download private key file to use for SSH connection.
 5. **EC2 Instance**:
    - Launches a t3.micro EC2 instance in the public subnet.
    - Associates the `external_connection_sg` with the instance.
