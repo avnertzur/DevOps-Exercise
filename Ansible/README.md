@@ -10,7 +10,9 @@ This Ansible project utilizes the `geerlingguy.docker` role to download Docker o
 ## Usage
 
 1. Navigate to project directory.
+
 2. Edit `hosts.yaml`, replace `<instance_ip>` with the IP of the instance that was outputed from the terraform.
+
 3. Download required roles:
     ```bash
     aansible-galaxy install -r requirements.yml
