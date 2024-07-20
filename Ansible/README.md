@@ -15,7 +15,7 @@ This Ansible project utilizes the `geerlingguy.docker` [role](https://galaxy.ans
 
 3. Download required roles:
     ```bash
-    aansible-galaxy install -r requirements.yml
+    ansible-galaxy install -r requirements.yml
     ```
 4. Run the playbook with the following command:
     ```bash
