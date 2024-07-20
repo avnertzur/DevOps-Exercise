@@ -9,6 +9,7 @@ resource "aws_key_pair" "generated_key" {
 }
 
 resource "local_file" "pk_file" {
-  content  = tls_private_key.keypair_prv_key.private_key_pem
-  filename = "${local.keypair_export_path}/${var.keypair_name}.pem"
+  content         = tls_private_key.keypair_prv_key.private_key_pem
+  filename        = "${local.keypair_export_path}/${var.keypair_name}.pem"
+  file_permission = "0400"
 }
