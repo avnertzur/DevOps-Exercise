@@ -19,5 +19,5 @@ This Ansible project utilizes the `geerlingguy.docker` [role](https://galaxy.ans
     ```
 4. Run the playbook with the following command:
     ```bash
-    ansible-playbook -i hosts.yaml playbook.yaml   
+    ansible-playbook -i hosts.yaml playbook.yaml
     ```
