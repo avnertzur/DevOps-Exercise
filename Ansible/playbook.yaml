@@ -2,6 +2,8 @@
   become: true
 
   vars:
+    docker_users: 
+      - "devops"
 
   roles:
     - geerlingguy.docker
