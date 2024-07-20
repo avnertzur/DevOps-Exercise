@@ -55,7 +55,14 @@ This Terraform project sets up an Amazon Web Services (AWS) environment with the
    ```bash
    terraform init
    ```
-4. Create `terraform.tfvars` file with required variables.
+4. Create `terraform.tfvars` file with required variables. For example:
+   ```yaml
+   private_ip = ["45.80.184.49/32"]
+   vpc_cidr = "10.42.0.0/16"
+   vpc_name = "Production"
+   vpc_private_subnets = ["10.42.1.0/24"]
+   vpc_public_subnets = ["10.42.2.0/24"]
+   ```
 5. Test the infrastructure:
    ```bash
    terraform plan
