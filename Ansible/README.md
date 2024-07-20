@@ -1,8 +1,8 @@
 # Ansible Configuration Manager
 
-This Ansible project utilizes the `geerlingguy.docker` role to download Docker onto a selected host, create a new user and give it permissions to run Docker commands.
+This Ansible project utilizes the `geerlingguy.docker` [role](https://galaxy.ansible.com/ui/standalone/roles/geerlingguy/docker/documentation/) to download Docker onto a selected host, create a new user and give it permissions to run Docker commands. 
 
-## prerequisites
+## Prerequisites
 
 1. Install Ansible
 
