@@ -20,14 +20,14 @@ This Terraform project sets up an Amazon Web Services (AWS) environment with the
 
 ## Variables
 
-- `vpc_name`: The Name of the VPC.
 - `aws_region`: AWS Region to deploy the VPC in (default: `us-east-1`).
+- `keypair_name`: Keypair name (default: `devops_kp`).
+- `private_ip`: Personal IP to connect with.
+- `tags`: Tags to add to all resources (default: `{ "Terraform": "true", "DevopsMaster": "true" }`).
+- `vpc_name`: The Name of the VPC.
 - `vpc_cidr`: CIDR block for VPC.
 - `vpc_private_subnets`: List of private subnets to create in VPC.
 - `vpc_public_subnets`: List of public subnets to create in VPC.
-- `private_ip`: Personal IP to connect with.
-- `tags`: Tags to add to all resources (default: `{ "Terraform": "true", "DevopsMaster": "true" }`).
-- `keypair_name`: Keypair name (default: `devops_kp`).
 
 ## Security Groups
 
